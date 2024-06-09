@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super chat - GPT (wish version)</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Super chat - GPT (wish version)</h1>
+        <div>
+            <input type="text" id="text_input_1" placeholder="Génération de code à l'aide d'une description">
+            <button onclick="sendInput(1)">Créer le code</button>
+        </div>
+        <div>
+            <input type="text" id="text_input_2" placeholder="Création de tests unitaires à l'aide du code">
+            <button onclick="sendInput(2)">Créer les tests unitaires</button>
+        </div>
+        <div>
+            <input type="text" id="text_input_3" placeholder="Merci de partagez votre .gitlab-ci.yaml">
+            <button onclick="sendInput(3)">¨Proposer un YML pour gitlab</button>
+        </div>
+        <div>
+            <h2>Results</h2>
+            <pre id="result_1" class="code-output"></pre>
+            <div class="extra-input-box">
+                <textarea id="extra_input_1" placeholder="Bloc note"></textarea>
+            </div>
+            <hr> 
+            <pre id="result_2" class="code-output"></pre>
+            <div class="extra-input-box">
+                <textarea id="extra_input_2" placeholder="Bloc note"></textarea>
+            </div>
+            <hr> 
+            <pre id="result_3" class="code-output"></pre>
+            <div class="extra-input-box">
+                <textarea id="extra_input_3" placeholder="Bloc note"></textarea>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function sendInput(inputNumber) {
+            let inputId = `#text_input_${inputNumber}`;
+            let inputValue = $(inputId).val();
+            let data = {};
+            data[`text_input_${inputNumber}`] = inputValue;
+
+            console.log("Sending data:", data);
+
+            $.ajax({
+                url: '/process_input',
+                type: 'POST',
+                data: data,
+                success: function(response) {
+                    if (inputNumber == 1) {
+                        $('#result_1').text(response.result_1);
+                    } else if (inputNumber == 2)  {
+                        $('#result_2').text(response.result_2);
+                    } else {
+                        $('#result_3').text(response.result_3);
+                    }
+                },
+                error: function(error) {
+                    console.log(error);
+                }
+            });
+        }
+    </script>
+</body>
+</html>

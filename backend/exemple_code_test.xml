@@ -1,0 +1,192 @@
+<?xml version='1.0' encoding='utf-8'?>
+<questionnaire>
+    <examples>
+        <example>
+            <sample>def calculer_moyenne(nombres):
+    """
+    Calcule la moyenne d'une liste de nombres.
+
+    Args:
+    nombres (list): Liste de nombres.
+
+    Returns:
+    float: La moyenne des nombres de la liste.
+    """
+    if not nombres:
+        return 0
+    return sum(nombres) / len(nombres)</sample>
+            <result>import unittest
+
+def calculer_moyenne(nombres):
+    """
+    Calcule la moyenne d'une liste de nombres.
+
+    Args:
+    nombres (list): Liste de nombres.
+
+    Returns:
+    float: La moyenne des nombres de la liste.
+    """
+    if not nombres:
+        return 0
+    return sum(nombres) / len(nombres)
+
+class TestCalculerMoyenne(unittest.TestCase):
+    """
+    Classe de tests unitaires pour la fonction calculer_moyenne.
+    """
+    
+    def test_moyenne_standard(self):
+        """
+        Test avec une liste standard de nombres.
+        """
+        nombres = [1, 2, 3, 4, 5]
+        self.assertEqual(calculer_moyenne(nombres), 3)
+        
+    def test_liste_vide(self):
+        """
+        Test avec une liste vide.
+        """
+        nombres = []
+        self.assertEqual(calculer_moyenne(nombres), 0)
+        
+    def test_nombres_negatifs(self):
+        """
+        Test avec des nombres négatifs.
+        """
+        nombres = [-1, -2, -3, -4, -5]
+        self.assertEqual(calculer_moyenne(nombres), -3)
+        
+    def test_melange_nombres(self):
+        """
+        Test avec un mélange de nombres positifs et négatifs.
+        """
+        nombres = [1, -1, 1, -1]
+        self.assertEqual(calculer_moyenne(nombres), 0)
+        
+if __name__ == '__main__':
+    # Exécute les tests unitaires
+    unittest.main()</result>
+        </example>
+        
+        <example>
+            <sample>def est_palindrome(chaine):
+    """
+    Vérifie si une chaîne est un palindrome.
+
+    Args:
+    chaine (str): La chaîne à vérifier.
+
+    Returns:
+    bool: True si la chaîne est un palindrome, False sinon.
+    """
+    return chaine == chaine[::-1]</sample>
+            <result>import unittest
+
+def est_palindrome(chaine):
+    """
+    Vérifie si une chaîne est un palindrome.
+
+    Args:
+    chaine (str): La chaîne à vérifier.
+
+    Returns:
+    bool: True si la chaîne est un palindrome, False sinon.
+    """
+    return chaine == chaine[::-1]
+
+class TestEstPalindrome(unittest.TestCase):
+    """
+    Classe de tests unitaires pour la fonction est_palindrome.
+    """
+    
+    def test_palindrome_standard(self):
+        """
+        Test avec un palindrome standard.
+        """
+        self.assertTrue(est_palindrome("radar"))
+        
+    def test_non_palindrome(self):
+        """
+        Test avec une chaîne qui n'est pas un palindrome.
+        """
+        self.assertFalse(est_palindrome("bonjour"))
+        
+    def test_palindrome_vide(self):
+        """
+        Test avec une chaîne vide.
+        """
+        self.assertTrue(est_palindrome(""))
+        
+    def test_palindrome_espaces(self):
+        """
+        Test avec un palindrome contenant des espaces.
+        """
+        self.assertTrue(est_palindrome("a man a plan a canal panama".replace(" ", "")))
+        
+if __name__ == '__main__':
+    # Exécute les tests unitaires
+    unittest.main()</result>
+        </example>
+        
+        <example>
+            <sample>def celsius_vers_fahrenheit(celsius):
+    """
+    Convertit une température de Celsius en Fahrenheit.
+
+    Args:
+    celsius (float): Température en degrés Celsius.
+
+    Returns:
+    float: Température en degrés Fahrenheit.
+    """
+    return celsius * 9/5 + 32</sample>
+            <result>import unittest
+
+def celsius_vers_fahrenheit(celsius):
+    """
+    Convertit une température de Celsius en Fahrenheit.
+
+    Args:
+    celsius (float): Température en degrés Celsius.
+
+    Returns:
+    float: Température en degrés Fahrenheit.
+    """
+    return celsius * 9/5 + 32
+
+class TestCelsiusVersFahrenheit(unittest.TestCase):
+    """
+    Classe de tests unitaires pour la fonction celsius_vers_fahrenheit.
+    """
+    
+    def test_conversion_standard(self):
+        """
+        Test avec une température standard.
+        """
+        self.assertEqual(celsius_vers_fahrenheit(0), 32)
+        
+    def test_conversion_negative(self):
+        """
+        Test avec une température négative.
+        """
+        self.assertEqual(celsius_vers_fahrenheit(-40), -40)
+        
+    def test_conversion_positive(self):
+        """
+        Test avec une température positive.
+        """
+        self.assertEqual(celsius_vers_fahrenheit(100), 212)
+        
+    def test_conversion_zero(self):
+        """
+        Test avec zéro degré Celsius.
+        """
+        self.assertEqual(celsius_vers_fahrenheit(0), 32)
+        
+if __name__ == '__main__':
+    # Exécute les tests unitaires
+    unittest.main()</result>
+        </example>
+    </examples>
+</questionnaire>

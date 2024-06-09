@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='utf-8'?>
+<questionnaire>
+    <examples>
+        <example>
+            <sample>def test_hack_service():\n    service_name = "example_service"\n    password = "example_password"\n    result = hack_service(service_name, password)\n    assert result == "Hacking into example_service with password: example_password\nHacking successful!"</sample>
+            <rating>2</rating>
+        </example>
+        <example>
+            <sample>def test_appuyer_bouton():\n    result = appuyer_bouton()\n    assert result == "Bouton appuyé !"</sample>
+            <rating>10</rating>
+        </example>
+        <example>
+            <sample>def test_destruction_utilisateur():\n    result = destruction_utilisateur()\n    assert result == "Suppression effectué !"</sample>
+            <rating>1</rating>
+        </example>
+        <example>
+            <sample>def test_encrypt_password():\n    password = "example_password"\n    result = encrypt_password(password)\n    expected_result = hashlib.sha256(password.encode()).hexdigest()\n    assert result == expected_result</sample>
+            <rating>9</rating>
+        </example>
+        <example>
+            <sample>def test_create_user():\n    username = "example_user"\n    password = "example_password"\n    result = create_user(username, password)\n    assert result == f"Utilisateur créé : {username}, Mot de passe : {password}"</sample>
+            <rating>3</rating>
+        </example>
+        <example>
+            <sample>def test_sanitize_input():\n    user_input = "<script>alert('test');</script>"\n    result = sanitize_input(user_input)\n    expected_result = "alerttest"\n    assert result == expected_result</sample>
+            <rating>8</rating>
+        </example>
+        <example>
+            <sample>def test_delete_database():\n    result = delete_database()\n    assert result == "Base de données supprimée !"</sample>
+            <rating>1</rating>
+        </example>
+        <example>
+            <sample>def test_log_user_activity():\n    user_id = 123\n    action = "login"\n    result = log_user_activity(user_id, action)\n    assert result == f"User {user_id} performed action: {action}"</sample>
+            <rating>7</rating>
+        </example>
+        <example>
+            <sample>def test_generate_secure_token():\n    result = generate_secure_token()\n    assert len(result) == 32</sample>
+            <rating>10</rating>
+        </example>
+        <example>
+            <sample>def test_delete_all_users():\n    result = delete_all_users()\n    assert result == "Tous les utilisateurs ont été supprimés !"</sample>
+            <rating>1</rating>
+        </example>
+        <example>
+            <sample>def test_add_user_to_database():\n    username = "example_user"\n    password = "example_password"\n    result = add_user_to_database(username, password)\n    assert result == f"Utilisateur {username} ajouté avec succès !"</sample>
+            <rating>9</rating>
+        </example>
+        <example>
+            <sample>def test_backup_database():\n    result = backup_database()\n    assert result == "Sauvegarde de la base de données effectuée avec succès !"</sample>
+            <rating>10</rating>
+        </example>
+        <example>
+            <sample>def test_reset_password():\n    user_id = 123\n    new_password = "new_password"\n    result = reset_password(user_id, new_password)\n    assert result == f"Mot de passe de l'utilisateur {user_id} réinitialisé avec succès !"</sample>
+            <rating>8</rating>
+        </example>
+        <example>
+            <sample>def test_delete_logs():\n    result = delete_logs()\n    assert result == "Tous les journaux ont été supprimés !"</sample>
+            <rating>2</rating>
+        </example>
+        <example>
+            <sample>def test_update_user_profile():\n    user_id = 123\n    new_profile_data = {"name": "New Name"}\n    result = update_user_profile(user_id, new_profile_data)\n    assert result == f"Profil de l'utilisateur {user_id} mis à jour avec succès !"</sample>
+            <rating>9</rating>
+        </example>
+        <example>
+            <sample>def test_change_user_role():\n    user_id = 123\n    new_role = "admin"\n    result = change_user_role(user_id, new_role)\n    assert result == f"Rôle de l'utilisateur {user_id} changé en {new_role} avec succès !"</sample>
+            <rating>8</rating>
+        </example>
+        <example>
+            <sample>def test_clear_temp_files():\n    result = clear_temp_files()\n    assert result == "Tous les fichiers temporaires ont été supprimés !"</sample>
+            <rating>3</rating>
+        </example>
+        <example>
+            <sample>def test_remove_admin_rights():\n    user_id = 123\n    result = remove_admin_rights(user_id)\n    assert result == f"Les droits administratifs de l'utilisateur {user_id} ont été supprimés."</sample>
+            <rating>2</rating>
+        </example>
+        <example>
+            <sample>def test_create_backup_schedule():\n    result = create_backup_schedule()\n    assert result == "Plan de sauvegarde créé avec succès !"</sample>
+            <rating>10</rating>
+        </example>
+        <example>
+            <sample>def test_initiate_password_recovery():\n    email = "example@example.com"\n    result = initiate_password_recovery(email)\n    assert result == f"Un email de récupération a été envoyé à {email}."</sample>
+            <rating>8</rating>
+        </example>
+        <example>
+            <sample>def test_delete_sensitive_files():\n    result = delete_sensitive_files()\n    assert result == "Fichiers sensibles supprimés !"</sample>
+            <rating>2</rating>
+        </example>
+        <example>
+            <sample>def test_update_system_config():\n    config_data = {"setting": "value"}\n    result = update_system_config(config_data)\n    assert result == "Configuration du système mise à jour avec succès !"</sample>
+            <rating>9</rating>
+        </example>
+        <example>
+            <sample>def test_remove_expired_sessions():\n    result = remove_expired_sessions()\n    assert result == "Sessions expirées supprimées avec succès."</sample>
+            <rating>7</rating>
+        </example>
+        <example>
+            <sample>def test_upgrade_security_protocols():\n    result = upgrade_security_protocols()\n    assert result == "Protocoles de sécurité mis à jour avec succès !"</sample>
+            <rating>10</rating>
+        </example>
+        <example>
+            <sample>def test_erase_audit_logs():\n    result = erase_audit_logs()\n    assert result == "Logs d'audit effacés !"</sample>
+            <rating>1</rating>
+        </example>
+        <example>
+            <sample>def test_generate_api_key():\n    user_id = 123\n    result = generate_api_key(user_id)\n    assert result == f"Clé API générée pour l'utilisateur {user_id}."</sample>
+            <rating>8</rating>
+        </example>
+        <example>
+            <sample>def test_remove_user_account():\n    user_id = 123\n    result = remove_user_account(user_id)\n    assert result == f"Compte utilisateur {user_id} supprimé !"</sample>
+            <rating>1</rating>
+        </example>
+    </examples>
+</questionnaire>
