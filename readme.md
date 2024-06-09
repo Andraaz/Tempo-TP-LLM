@@ -24,8 +24,7 @@ python3 app.py
 
 ## Les fichiers de l'application
 
-| Nom de dossier | Utilité                                                       |
-|----------------|---------------------------------------------------------------|
-| Backend        | Regroupe les superprompt et le code du back de l'application  |
-| Static         | Contient le CSS                                               |
-| Template       | L'HTML du site                                                |
+| Nom de fichier | Utilité                                                           |
+|----------------|-------------------------------------------------------------------|
+| reponse.py     | Code qui renvoie après traitement de LLM du text de l'utilisateur |
+| app.py         | Les routes de l'application (en flask)                            |
